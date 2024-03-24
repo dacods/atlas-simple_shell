@@ -8,6 +8,7 @@
 
 void execute_command(char *command)
 {
+	char *args;
 	int status;
 	pid_t pid = fork();
 
@@ -18,9 +19,17 @@ void execute_command(char *command)
 	}
 	else if (pid == 0)
 	{
-		execlp(command, command, NULL);
-		fprintf(stderr, "Error: Command '%s' not found\n", command);
-		exit(EXIT_FAILURE);
+		args = strchr(command, ' ');
+		if (args != NULL)
+			execute_command_with_args(command);
+		else
+		{
+			execlp(command, command, NULL);
+
+			fprintf(stderr, "Error: Command '%s' not found\n", command);
+			exit(EXIT_FAILURE);
+		}
+		exit(EXIT_SUCCESS);
 	}
 	else
 		waitpid(pid, &status, 0);
