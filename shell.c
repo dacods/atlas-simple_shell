@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
+#include "main.h"
 
 /**
  * main - write a UNIX command line interpreter
@@ -11,21 +8,23 @@
 
 int main()
 {
-        int x = 1;
-        char buffer[1024];
+        char command[MAX_COMMAND_LENGTH];
 
-        while (x == 1)
-        {
-                printf("#cisfun$ ");
-                scanf("%s", buffer);
-                if (access(buffer,F_OK) == 0)
-                {
-                        system (buffer);
-                }
-                else {
-                        printf("./shell: No such file or directory\n");
-                }
+	while (1)
+	{
+		printf("$ ");
+		fflush(stdout);
 
-        }
-        return (0);
+		if (fgets(command, sizeof(command), stdin) == NULL)
+		{
+			printf("\nExiting shell...\n");
+			break;
+		}
+
+		command[strcspn(command, "\n")] = '\0';
+
+		execute_command(command);
+	}
+
+	return (0);
 }
