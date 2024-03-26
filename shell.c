@@ -6,13 +6,14 @@
  * Return: 0
  */
 
-int main()
+int main(void)
 {
         char command[MAX_COMMAND_LENGTH];
 
+	printf("$: ");
+
 	while (1)
 	{
-		printf("$: ");
 		fflush(stdout);
 
 		if (fgets(command, sizeof(command), stdin) == NULL)
