@@ -5,8 +5,8 @@
 <h3>Description</h3>
 
 
-##Description
+<h4>Description</h4>
 Writing a simple UNIX command interpreter
 
-#AUTHORS AND ACKNOWLEDGMENT
+<h5>Authors and Acknowledgments</h5>
 LJ THAO & DACODA TAKAGI
