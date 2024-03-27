@@ -1,5 +1,4 @@
-#atlas-simple-shell
-Atlas Simple Shell Project
+<h> Atlas Simple Shell Project </h>
 
 ##Table of Contents
 
