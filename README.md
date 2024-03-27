@@ -9,5 +9,5 @@ Atlas Simple Shell Project
 ##Description
 Writing a simple UNIX command interpreter
 
-#AUTHORS AND ACKNOWLEGEMENT
+#AUTHORS AND ACKNOWLEDGMENT
 LJ THAO & DACODA TAKAGI
