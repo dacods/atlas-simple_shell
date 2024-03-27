@@ -8,9 +8,7 @@
 
 int main(void)
 {
-        char command[MAX_COMMAND_LENGTH];
-
-	printf("$: "); 
+        char command[MAX_COMMAND_LENGTH]; 
 
 	while (1)
 	{
