@@ -6,24 +6,23 @@
  * Return: 0
  */
 
-int main()
+int main(void)
 {
         char command[MAX_COMMAND_LENGTH];
 
+	printf("$: ");
+
 	while (1)
 	{
-		printf("$ ");
 		fflush(stdout);
 
 		if (fgets(command, sizeof(command), stdin) == NULL)
 		{
-			printf("\nExiting shell...\n");
 			break;
 		}
-
 		command[strcspn(command, "\n")] = '\0';
 
-		execute_command(command);
+		execute_command_with_args(command);
 	}
 
 	return (0);
