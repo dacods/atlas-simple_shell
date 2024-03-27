@@ -1,8 +1,8 @@
-<h1> Atlas Simple Shell Project </h1>
+<h1>Atlas Simple Shell Project</h1>
 
-##Table of Contents
+<h2>Table of Contents</h2>
 
-#Description
+<h3>Description</h3>
 
 
 ##Description
