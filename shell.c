@@ -10,6 +10,8 @@ int main(void)
 {
         char command[MAX_COMMAND_LENGTH]; 
 
+	printf("$: ");
+
 	while (1)
 	{
 		fflush(stdout);
