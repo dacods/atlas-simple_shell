@@ -10,7 +10,7 @@ int main(void)
 {
         char command[MAX_COMMAND_LENGTH];
 
-	printf("$: ");
+/*	printf("$: "); */ 
 
 	while (1)
 	{
