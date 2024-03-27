@@ -12,18 +12,18 @@ int main(void)
 
 	printf("$: ");
 
-	while (1)
-	{
-		fflush(stdout);
+        while (1)
+        {
+                fflush(stdout);
 
-		if (fgets(command, sizeof(command), stdin) == NULL)
-		{
-			break;
-		}
-		command[strcspn(command, "\n")] = '\0';
+                if (fgets(command, sizeof(command), stdin) == NULL)
+                {
+                        break;
+                }
+                command[strcspn(command, "\n")] = '\0';
 
-		execute_command_with_args(command);
-	}
+                execute_command_with_args(command);
+        }
 
-	return (0);
+        return (0);
 }

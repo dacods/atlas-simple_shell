@@ -9,9 +9,13 @@
 
 #define MAX_COMMAND_LENGTH 100
 
+<<<<<<< HEAD
 
 
 int main();
+=======
+int main(void);
+>>>>>>> LJThao
 void execute_command_with_args(char *command);
 
 #endif
