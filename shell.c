@@ -8,10 +8,9 @@
 
 int main(void)
 {
-	int a = 1;
 	char command[MAX_COMMAND_LENGTH]; 
 
-        while (a == 1)
+   	while (1)
 	{
 		printf("$ ");
 		shell_input(command, sizeof(command));
