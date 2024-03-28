@@ -13,7 +13,7 @@ int main(void)
 
         while (a == 1)
 	{
-		printf("#cisisfun$ ");
+		printf("cisisfun$ ");
 		shell_input(command, sizeof(command));
 		execute_command_with_args(command);
 	}

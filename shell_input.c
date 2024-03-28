@@ -8,9 +8,14 @@
 
 void shell_input(char *command, size_t size)
 {
-	if (fgets(command, size, stdin) == NULL)
+	char *line = NULL;
+	size_t len = 0;
+	ssize_t read;
+
+	read = getline(&line, &len, stdin);
+	if (read == -1)
 	{
-	       	if (feof(stdin))
+		if (feof(stdin))
 		{
 			printf("\n");
 			exit(EXIT_SUCCESS);
@@ -19,5 +24,8 @@ void shell_input(char *command, size_t size)
 			exit(EXIT_FAILURE);
                 }
         }
-        command[strcspn(command, "\n")] = '\0';
+	strncpy(command, line, size - 1);
+	command[size - 1] = '\0';
+
+	free(line);
 }
