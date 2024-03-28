@@ -8,22 +8,13 @@
 
 int main(void)
 {
-        char command[MAX_COMMAND_LENGTH];
+	char command[MAX_COMMAND_LENGTH]; 
 
-	printf("$: ");
-
-	while (1)
+   	while (1)
 	{
-		fflush(stdout);
-
-		if (fgets(command, sizeof(command), stdin) == NULL)
-		{
-			break;
-		}
-		command[strcspn(command, "\n")] = '\0';
-
+		printf("$ ");
+		shell_input(command, sizeof(command));
 		execute_command_with_args(command);
 	}
-
 	return (0);
 }
