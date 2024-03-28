@@ -10,11 +10,12 @@ int main(void)
 {
         char command[MAX_COMMAND_LENGTH];
 
-	printf("$: ");
-
 	while (1)
 	{
-		fflush(stdout);
+		if (isatty(STDIN_FILENO))
+		{
+			write(STDOUT_FILENO, "$ ", 2);
+		}
 
 		if (fgets(command, sizeof(command), stdin) == NULL)
 		{
