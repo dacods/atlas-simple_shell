@@ -12,7 +12,6 @@ void shell_input(char *command, size_t size)
         {
                 if (feof(stdin))
                 {
-                        printf("\n");
                         exit(EXIT_SUCCESS);
                 } else {
                         printf("Error while reading input.\n");

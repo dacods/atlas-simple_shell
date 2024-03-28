@@ -12,7 +12,11 @@ int main(void)
 
    	while (1)
 	{
-		printf("$ ");
+		if (isatty(STDIN_FILENO))
+		{
+			write(STDOUT_FILENO, "$: ", 4);
+		}
+
 		shell_input(command, sizeof(command));
 		execute_command_with_args(command);
 	}
