@@ -8,22 +8,27 @@
 
 void shell_input(char *command, size_t size)
 {
-	int c;
+	ssize_t num_read;
 	size_t i = 0;
 
-	while ((c = getchar()) != EOF && c != '\n')
+	while ((num_read = read(STDIN_FILENO, &command[i], 1)) > 0)
         {
-                if (i < size - 1)
-		       command[i++] = c;	
-		else
+                if (command[i] == '\n')
 		{
-                        printf("Error while reading input.\n");
-                        exit(EXIT_FAILURE);
-                }
+			command[i] = '\0';
+			return;
+		}
+
+		if (++i == size - 1)
+		{
+			fprintf(stderr, "Input too long.\n");
+			exit(EXIT_FAILURE);
+		}
         }
         
-	if (c == EOF)
+	if (num_read == 0)
 		exit(EXIT_SUCCESS);
 
-	command[i] = '\0';
+	perror("Error while reading input");
+	exit(EXIT_FAILURE);
 }
