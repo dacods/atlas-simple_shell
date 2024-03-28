@@ -11,6 +11,7 @@
 #define MAX_COMMAND_LENGTH 100
 
 int main(void);
+void shell_input(char *command, size_t size);
 void execute_command_with_args(char *command);
 
 #endif
