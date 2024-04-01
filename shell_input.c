@@ -29,6 +29,9 @@ void shell_input(char *command, size_t size)
 	if (num_read == 0)
 		exit(EXIT_SUCCESS);
 
-	perror("Error while reading input");
-	exit(EXIT_FAILURE);
+	if (num_read < 0)
+	{
+		perror("Error while reading input");
+		exit(EXIT_FAILURE);
+	}
 }

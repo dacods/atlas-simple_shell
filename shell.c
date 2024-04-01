@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	char command[MAX_COMMAND_LENGTH]; 
+	char command[MAX_COMMAND_LENGTH];
 
    	while (1)
 	{
