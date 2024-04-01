@@ -18,6 +18,10 @@ int main(void)
 		}
 
 		shell_input(command, sizeof(command));
+
+		if (strspn(command, " \t\n") == strlen(command))
+			continue;
+
 		execute_command_with_args(command);
 	}
 	return (0);
