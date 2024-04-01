@@ -14,7 +14,7 @@ void shell_input(char *command, size_t size)
 
 	while ((num_read = read(STDIN_FILENO, &command[i], 1)) > 0)
         {
-		if (!non_whitespace_found && isspace(command[i]))
+		if (!non_whitespace_found && (command[i] == ' ' || command[i] == '\t' || command[i] == '\n'))
 			continue;
 
                 if (command[i] == '\n')
