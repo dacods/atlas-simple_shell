@@ -12,7 +12,20 @@ void execute_command_with_args(char *command)
 	char *token;
 	int i = 0;
 	int status;
-	pid_t pid = fork();
+	pid_t pid;
+
+	token = strtok(command, " ");
+	while (token != NULL)
+	{
+		args[i++] = token;
+		token = strtok(NULL, " ");
+	}
+	args[i] = NULL;
+
+	if (strcmp(args[0], "exit") == 0)
+		exit(EXIT_SUCCESS);
+
+	pid = fork();
 
 	if (pid == -1)
 	{
@@ -21,15 +34,6 @@ void execute_command_with_args(char *command)
 	}
 	else if (pid == 0)
 	{
-		token = strtok(command, " ");
-
-		while (token != NULL)
-		{
-			args[i++] = token;
-			token = strtok(NULL, " ");
-		}
-		args[i] = NULL;
-
 		if (execve(args[0], args, NULL) == -1)
 		{
 			perror("execve");
