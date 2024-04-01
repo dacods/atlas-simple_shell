@@ -23,7 +23,14 @@ void execute_command_with_args(char *command)
 	args[i] = NULL;
 
 	if (strcmp(args[0], "exit") == 0)
+	{
+		if (args[1] != NULL)
+		{
+			fprintf(stderr, "exit: too many arguments\n");
+			return;
+		}
 		exit(EXIT_SUCCESS);
+	}
 
 	pid = fork();
 
