@@ -8,7 +8,9 @@
 
 int main(void)
 {
-	char command[MAX_COMMAND_LENGTH]; 
+	char command[MAX_COMMAND_LENGTH];
+	int all_whitespace = 1;
+	size_t i;
 
    	while (1)
 	{
@@ -19,7 +21,16 @@ int main(void)
 
 		shell_input(command, sizeof(command));
 
-		if (strspn(command, " \t\n") == strlen(command))
+		for (i = 0; i < strlen(command); i++)
+		{
+			if (command[i] != ' ' && command[i] != '\t' && command[i] != '\n')
+			{
+				all_whitespace = 0;
+				break;
+			}
+		}
+
+		if (all_whitespace)
 			continue;
 
 		execute_command_with_args(command);
