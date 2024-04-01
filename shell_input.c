@@ -10,14 +10,20 @@ void shell_input(char *command, size_t size)
 {
 	ssize_t num_read;
 	size_t i = 0;
+	int non_whitespace_found = 0;
 
 	while ((num_read = read(STDIN_FILENO, &command[i], 1)) > 0)
         {
+		if (!non_whitespace_found && isspace(command[i]))
+			continue;
+
                 if (command[i] == '\n')
 		{
 			command[i] = '\0';
 			return;
 		}
+
+		non_whitespace_found = 1;
 
 		if (++i == size - 1)
 		{
