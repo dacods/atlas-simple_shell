@@ -63,9 +63,8 @@ AUTHORS  README.md  execute_command_with_args.c  hsh  main.h  man_1_simple_shell
 
 ## Authors and Acknowledgments
 
-```
-LJ Thao | Dacoda Takagi
-```
+- LJ Thao [<a href="mailto:yengfong.thao@atlasschool.com">Email</a>] | [<a href="https://github.com/LJThao">@LJThao</a>]
+- Dacoda Takagi [<a href="mailto:dacods.21@gmail.com">Email</a>] | [<a href="https://github.com/dacods/">@dacods</a>]
 
 <p align="center">
   <img src="https://media1.giphy.com/media/1oF1KAEYvmXBMo6uTS/giphy.gif?cid=6c09b952mab0863mf9e67wk3bsrsznh9wn4ccgmvitg1xq8i&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g"/>
