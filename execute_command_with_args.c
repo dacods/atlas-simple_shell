@@ -24,7 +24,7 @@ void execute_command_with_args(char *command)
 	{
 		token = strtok(command, " ");
 
-		 while (token != NULL && i < MAX_COMMAND_LENGTH - 1)
+		 while (token != NULL)
                 {
                         args[i++] = token;
                         token = strtok(NULL, " ");
@@ -43,12 +43,7 @@ void execute_command_with_args(char *command)
 		exit(EXIT_SUCCESS);
 	}
 	else
-	{
-		if (waitpid(pid, &status, 0) == -1)
-		{
-			perror("waitpid");
-			exit(EXIT_FAILURE);
-		}
-	}
+		waitpid(pid, &status, 0);
+
 	free(command_path);
 }
