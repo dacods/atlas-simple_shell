@@ -8,6 +8,7 @@
 
 void execute_command_with_args(char *command)
 {
+	char **env;
 	char *args[MAX_COMMAND_LENGTH];
 	char *token;
 	int i = 0;
@@ -30,6 +31,17 @@ void execute_command_with_args(char *command)
 			return;
 		}
 		exit(EXIT_SUCCESS);
+	}
+
+	if (strcmp(args[0], "env") == 0)
+	{
+		env = environ;
+		while (*env != NULL)
+		{
+			printf("%s\n", *env);
+			env++;
+		}
+		return;
 	}
 
 	pid = fork();
