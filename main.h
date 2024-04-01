@@ -13,7 +13,7 @@
 
 int main(void);
 void shell_input(char *command, size_t size);
-char *get_path(char *command);
-void execute_command_with_args(char *command);
+char *get_path(char *command, char *path);
+void execute_command_with_args(char *command, char *path);
 
 #endif
