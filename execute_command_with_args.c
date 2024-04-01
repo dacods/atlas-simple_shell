@@ -14,6 +14,8 @@ void execute_command_with_args(char *command)
 	int i = 0;
 	int status;
 	pid_t pid;
+	char *path;
+	char exec_path[MAX_COMMAND_LENGTH];
 
 	token = strtok(command, " ");
 	while (token != NULL)
@@ -44,22 +46,44 @@ void execute_command_with_args(char *command)
 		return;
 	}
 
-	pid = fork();
-
-	if (pid == -1)
+	path = getenv("PATH");
+	if (path == NULL)
 	{
-		perror("fork");
+		fprintf(stderr, "PATH environment variable not set\n");
 		exit(EXIT_FAILURE);
 	}
-	else if (pid == 0)
+
+	token = strtok(path, ":");
+	while (token != NULL)
 	{
-		if (execve(args[0], args, NULL) == -1)
+		sprintf(exec_path, "%s/%s", token, args[0]);
+
+		pid = fork();
+
+		if (pid == -1)
 		{
-			perror("execve");
+			perror("fork");
 			exit(EXIT_FAILURE);
 		}
-		exit(EXIT_SUCCESS);
+		else if (pid == 0)
+		{
+			if (execve(exec_path, args, environ) == -1)
+			{
+				perror("execve");
+				exit(EXIT_FAILURE);
+			}
+			exit(EXIT_SUCCESS);
+		}
+		else
+		{
+			waitpid(pid, &status, 0);
+			if (WIFEXITED(status) && WEXITSTATUS(status) == 0)
+				return;
+		}
+
+		token = strtok(NULL, ":");
 	}
-	else
-		waitpid(pid, &status, 0);
+
+	fprintf(stderr, "%s: command not found\n", args[0]);
+	exit(EXIT_FAILURE);
 }
