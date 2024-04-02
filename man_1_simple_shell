@@ -1,10 +1,17 @@
-.TH ATLAS SIMPLE SHELL PROJECT "04 APRIL 2024"
-
-.SH SIMPLE SHELL
-
+.TH ATLAS SIMPLE SHELL PROJECT "04 APRIL 2024" "1.0" "THE SIMPLE SHELL"
+.SH THE SIMPLE SHELL
+A simple shell, also known as a command-line interface, is a program that allows users to interact with an operating system by typing commands into a terminal or console.
 .SH DESCRIPTION
-
-.SH BUGS
-
-.SH AUTHOR
+The Simple Shell is a program that interprets user commands and verifies paths to execute them. If the paths are invalid, it restarts the loop.
+.SH USAGE EXAMPLES
+.TP
+.B $ /bin/ls
+List the contents of a directory
+.SH SEE ALSO
+$ ls
+$ exit
+.SH AUTHOR NAMES
 LJ THAO | DACODA TAKAGI
+.SH BUGS
+.SH HISTORY
+Version 1.0, April 2024
