@@ -4,7 +4,7 @@
 ## Description
 A shell implemented in C serves as a command-line interpreter for Unix-like operating systems, facilitating user interaction with the system by accepting commands via the command-line interface and executing them. Acting as an intermediary between the user and the operating system, the C-based shell reads input commands, parses them, and then orchestrates their execution, enabling users to interact with the system by typing commands and receiving corresponding responses.
 
-## Testing in interactive mode and non-interactive mode and on how to use it?
+## Installation and Testing in Interactive and Non-interactive mode
 First, we clone our repository to our local machine by:
 
 ```
