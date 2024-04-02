@@ -41,23 +41,24 @@ Interactive mode:
 ```
 /atlas-simple_shell# ./hsh
 #$ ls
-./hsh: No such file or directory
+execve: No such file or directory
 #$ /bin/ls
-AUTHORS  README.md  execute_command_with_args.c  hsh  main.h  man_1_simple_shell  shell.c
+AUTHORS  README.md  execute_command_with_args.c  hsh  main.h  man_1_simple_shell  shell.c  shell_input.c
 #$ ^[[D^[[D^[[D
-.hsh: No such file or directory
+execve: No such file or directory
 #$ ^[[C^[[C^[[C^[[C
-./shell: No such file or directory
+execve: No such file or directory
 #$ exit
-./hsh: No such file or directory
+/atlas-simple_shell#
 #$ ^C
+/atlas-simple_shell# 
 ```
 
 Non-interactive mode:
 
 ```
 /atlas-simple_shell# echo "/bin/ls" | ./hsh
-AUTHORS  README.md  execute_command_with_args.c  hsh  main.h  man_1_simple_shell  shell.c
+AUTHORS  README.md  execute_command_with_args.c  hsh  main.h  man_1_simple_shell  shell.c  shell_input.c
 /atlas-simple_shell#
 ```
 
