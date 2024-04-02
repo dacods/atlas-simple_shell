@@ -5,19 +5,19 @@
 A shell implemented in C serves as a command-line interpreter for Unix-like operating systems, facilitating user interaction with the system by accepting commands via the command-line interface and executing them. Acting as an intermediary between the user and the operating system, the C-based shell reads input commands, parses them, and then orchestrates their execution, enabling users to interact with the system by typing commands and receiving corresponding responses.
 
 ## Installation and Testing in Interactive and Non-interactive mode
-First, we clone our repository to our local machine by:
+First, clone the repository to your local machine:
 
 ```
 $ git clone https://github.com/dacods/atlas-simple_shell.git
 ```
 
-Next, we go to our location and find the atlas-simple_shell folder by:
+Next, go to the atlas-simple_shell directory:
 
 ```
 $ cd atlas-simple_shell
 ```
 
-Then, we will use this command to compile:
+Then, use the command to compile:
 
 ```
 $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
