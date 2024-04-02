@@ -61,6 +61,9 @@ Non-interactive mode:
 AUTHORS  README.md  execute_command_with_args.c  hsh  main.h  man_1_simple_shell  shell.c  shell_input.c
 /atlas-simple_shell#
 ```
+## Flowchart
+![Simple_shell_flow drawio](https://github.com/dacods/atlas-simple_shell/assets/135403583/e0f0f995-3f27-4d37-8284-600c968dee65)
+
 
 ## Authors and Acknowledgments
 
